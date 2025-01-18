@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - EZ Squeeze</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="images/logo.png" alt="EZ Squeeze Logo">
+        </a>
+        <h1><a href="index.html">EZ Squeeze</a></h1>
+        <nav>
+            <a href="product.html">Our Product</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="cart.html">
+                <img src="images/cart-icon.png" alt="Shopping Cart" class="cart-icon">
+            </a>
+        </nav>
+    </header>
+    <main class="cart-page">
+        <h1>Your Shopping Cart</h1>
+        <div class="cart-container">
+            <div id="cart-items" class="cart-items"></div>
+            <div id="cart-summary" class="cart-summary">
+                <h2>Summary</h2>
+                <p id="total-price">Total: $0.00 CAD</p>
+                <button class="checkout-button">Checkout</button>
+            </div>
+        </div>
+        <div id="empty-cart" class="empty-cart" style="display: none;">
+            <img src="images/empty-cart.png" alt="Empty Cart" class="empty-cart-image">
+            <p>Your cart is currently empty.</p>
+            <button class="continue-shopping-button" onclick="continueShopping()">Continue Shopping</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 EZ Squeeze. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/ezsqueezeqc/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61572241461773" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.youtube.com/@ezsqueezeqc" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@ezsqueezeqc" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            const totalPriceElement = document.getElementById('total-price');
+            const emptyCartElement = document.getElementById('empty-cart');
+            const cartSummaryElement = document.getElementById('cart-summary');
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.style.display = 'none';
+                emptyCartElement.style.display = 'block';
+                cartSummaryElement.style.display = 'none';
+                totalPriceElement.textContent = 'Total: $0.00 CAD';
+            } else {
+                cartItemsContainer.style.display = 'block';
+                emptyCartElement.style.display = 'none';
+                cartSummaryElement.style.display = 'block';
+                cartItemsContainer.innerHTML = '';
+                cart.forEach((item, index) => {
+                    totalPrice += item.price * item.quantity;
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('cart-item');
+                    itemElement.innerHTML = `
+                        <img src="images/product-image1.jpg" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <p>${item.name}</p>
+                            <p>Price: $${item.price.toFixed(2)} CAD</p>
+                            <p>Quantity: <input type="number" class="quantity-input" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)" oninput="adjustWidth(this)"></p>
+                            <button class="cart-button" onclick="removeFromCart(${index})">Remove</button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(itemElement);
+                });
+                totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)} CAD`;
+            }
+        }
+
+        function removeFromCart(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function updateQuantity(index, quantity) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (quantity > 0) {
+                cart[index].quantity = parseInt(quantity, 10);
+            } else {
+                cart.splice(index, 1);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function adjustWidth(input) {
+            input.style.width = `${input.value.length + 1}ch`;
+        }
+
+        function continueShopping() {
+            window.location.href = 'index.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', loadCart);
+    </script>
+</body>
+</html>

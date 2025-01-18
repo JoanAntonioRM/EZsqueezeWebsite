@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - EZ Squeeze</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="images/logo.png" alt="EZ Squeeze Logo">
+        </a>
+        <h1><a href="index.html">EZ Squeeze</a></h1>
+        <nav>
+            <a href="product.html">Our Product</a>
+            <a href="cart.html">
+                <img src="images/cart-icon.png" alt="Shopping Cart" class="cart-icon">
+            </a>
+        </nav>
+    </header>
+    <main class="contact-page">
+        <h1>Contact Us</h1>
+        <div class="form-container">
+            <form class="contact-form" onsubmit="sendEmail(event)">
+                <div class="name-fields">
+                    <input type="text" name="first-name" placeholder="First Name" required>
+                    <input type="text" name="last-name" placeholder="Last Name" required>
+                </div>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div class="success-message" style="display: none;">
+                <p>Message sent! We will get back to you shortly.</p>
+                <button onclick="goToHomePage()">Go to Home Page</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 EZ Squeeze. All rights reserved.</p>
+    </footer>
+    <script>
+        function sendEmail(event) {
+            event.preventDefault();
+            document.querySelector('.contact-form').style.display = 'none';
+            document.querySelector('.success-message').style.display = 'block';
+        }
+
+        function goToHomePage() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

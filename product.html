@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - EZ Squeeze</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="images/logo.png" alt="EZ Squeeze Logo">
+        </a>
+        <h1><a href="index.html">EZ Squeeze</a></h1>
+        <nav>
+            <a href="contact.html">Contact Us</a>
+            <a href="cart.html">
+                <img src="images/cart-icon.png" alt="Shopping Cart" class="cart-icon">
+            </a>
+        </nav>
+    </header>
+    <div class="container">
+        <main class="product-page">
+            <h1>Universal tube extractor</h1>
+            <p>This tool allows you to extract every last drop of product from your tubes, whether it is toothpaste, sunscreen, facial cosmetics or other similar products to guarantee zero waste.</p>
+            <p>Sold in packs of 2</p>
+            <div class="product-images">
+                <img src="images/product-image1.jpg" alt="Product Image 1">
+                <img src="images/product-image2.jpg" alt="Product Image 2">
+            </div>
+            <p>Price: <span>$8.00 CAD</span></p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2025 EZ Squeeze. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/ezsqueezeqc/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61572241461773" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.youtube.com/@ezsqueezeqc" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@ezsqueezeqc" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
+    <script>
+        let currentSlide = 0;
+        function changeSlide(direction) {
+            const slides = document.querySelectorAll('.slide');
+            slides[currentSlide].style.display = 'none';
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].style.display = 'block';
+        }
+
+        function addToCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const productName = 'Universal tube extractor';
+            const productPrice = 8.00;
+            const existingProductIndex = cart.findIndex(item => item.name === productName);
+
+            if (existingProductIndex !== -1) {
+                cart[existingProductIndex].quantity += 1;
+            } else {
+                const product = {
+                    name: productName,
+                    price: productPrice,
+                    quantity: 1
+                };
+                cart.push(product);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'cart.html'; // Redirect to cart.html
+        }
+    </script>
+</body>
+</html>

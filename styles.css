@@ -1,0 +1,426 @@
+/* General Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Ensures the footer stays at the bottom of the page */
+    background-color: #f4f9ffd5; /* Light blue background */
+    color: #00aeff; /* Black text */
+}
+
+/* Header styles */
+header {
+    display: flex; /* Enables Flexbox */
+    align-items: center; /* Vertically aligns content */
+    justify-content: space-between; /* Space between the logo and other items */
+    padding: 10px 20px;
+    background-color: #ffffff; /* Optional: Header background color */
+    border-bottom: 1px solid #ccc; /* Optional: Subtle bottom border */
+    position: sticky; /* Makes the header sticky at the top */
+    top: 0;
+    z-index: 1000; /* Ensures the header is above other content */
+    height: 60px; /* Set a fixed height for the header */
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    flex-direction: column; /* Ensures content stacks vertically */
+    min-height: calc(100vh - 120px); /* Adjust height to account for header and footer */
+    padding: 20px; /* Optional: Add padding */
+    text-align: center; /* Ensures text alignment inside the container */
+}
+
+/* Logo styles */
+header img {
+    height: 40px; /* Adjust height to fit your design */
+    cursor: pointer;
+}
+
+.cart-icon {
+    width: 40px; /* Adjust width */
+    height: 40px; /* Adjust height to maintain square aspect ratio */
+    display: inline-block; /* Ensure it aligns with other nav items */
+    vertical-align: middle; /* Center it vertically */
+    transition: transform 0.2s ease; /* Optional: Add hover effect */
+}
+
+/* Header title styles */
+header h1 {
+    flex: 1; /* Allows the title to occupy space between logo and nav */
+    text-align: left; /* Centers the title */
+    margin: 10px; /* Remove default margin */
+    font-size: 1.8rem; /* Adjust font size */
+    color: #237bff; /* Text color */
+    font-weight: bold;
+    cursor: pointer; /* Indicates it's clickable */
+    line-height: 60px; /* Aligns text vertically within the header */
+}
+
+/* Center text in the landing page */
+.landing-page {
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center; /* Ensures text alignment inside the flex container */
+    height: 10vh; /* Makes the landing page take up the full height of the viewport */
+    background-color: #f4f9ffd5; /* Optional: Add a light background color for style */
+    color: #000000; /* Optional: Set text color */
+    margin-bottom: 20px; /* Adjust this value to reduce spacing */
+    margin-top: 40px; /* Adjust this value to increase spacing */
+}
+
+.landing-page h1 {
+    margin-bottom: 20px; /* Adjust this value to control spacing below the heading */
+}
+
+/* Centering the product showcase section */
+.product-showcase {
+    display: flex; /* Enables Flexbox */
+    flex-direction: column; /* Stacks text and image vertically */
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 75vh; /* Makes the section take the full height of the viewport */
+    text-align: center; /* Centers the text inside the container */
+    background-color: #f4faff; /* Optional: Add a background color */
+    color: #000; /* Optional: Text color */
+}
+
+.product-showcase h2 {
+    margin-bottom: 10px; /* Adjust this value to reduce spacing */
+}
+
+.product-showcase a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Styling the image */
+.product-showcase img {
+    width: 300px; /* Limits the maximum width of the image */
+    height: 300px; /* Maintains the aspect ratio */
+    margin-top: 20px; /* Adds space between the text and the image */
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+    border-radius: 10px; /* Optional: Adds rounded corners to the image */
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.product-showcase p {
+    margin-top: 10px; /* Adjust this value to control spacing */
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.product-details img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover; /* Adjust size for the details page */
+}
+
+.product-images img {
+    width: 300px; /* Set the desired width */
+    height: 300px; /* Set the desired height to make it a square */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin: 10px; /* Optional: Add margin between images */
+    border-radius: 10px; /* Optional: Adds rounded corners to the image */
+}
+
+header nav a {
+    text-decoration: none;
+    color: #77c9f8;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 10px;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #a7dcff; /* Darker Blue on hover */
+}
+
+nav a:hover .cart-icon {
+    transform: scale(1.15); /* Optional: Slight zoom on hover */
+}
+
+/* Ensure links in the header always look the same */
+header a:link, 
+header a:visited {
+    text-decoration: none; /* Removes the underline */
+    color: #68c3ff; /* Black text color */
+    font-weight: bold; /* Ensures consistent weight */
+    transition: color 0.3s; /* Optional: Smooth transition on hover */
+}
+
+header a:hover {
+    color: #68c3ff; /* Optional: Changes color when hovered over */
+}
+
+
+main {
+    flex: 1; /* Allows the main content to take up the remaining space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(45deg, #1eacff, #528bac);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #8ad3fd, #5f90ad);
+}
+
+.cart-button {
+    background-color: #f0f0f0; /* Light grey background */
+    border: 1px solid #ccc; /* Light grey border */
+    color: #ffffff; /* Dark grey text */
+    padding: 5px 10px; /* Padding */
+    margin: 5px; /* Margin between buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+}
+
+.cart-button:hover {
+    background-color: #e0e0e0; /* Slightly darker grey on hover */
+}
+
+.checkout-button {
+    background-color: #00aeff; /* Blue background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    margin: 10px 0; /* Margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+}
+
+.checkout-button:hover {
+    background-color: #007bbf; /* Darker blue on hover */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1; /* Light grey background */
+    border-top: 1px solid #ccc; /* Optional: Subtle top border */
+    color: black; /* Change text color to black */
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #00aeff;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.cart-item-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+.cart-items {
+    flex: 2;
+    margin-right: 20px;
+}
+
+.cart-summary {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.quantity-input {
+    width: 50px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.empty-cart {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.empty-cart-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.continue-shopping-button {
+    background-color: #00aeff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.continue-shopping-button:hover {
+    background-color: #007bbf;
+}
+
+.empty-cart {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.empty-cart-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.continue-shopping-button {
+    background-color: #00aeff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.continue-shopping-button:hover {
+    background-color: #007bbf;
+}
+
+.contact-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name-fields {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.name-fields input {
+    width: calc(50% - 10px); /* Adjust width to add space between inputs */
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button,
+.success-message button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button,
+.success-message button {
+    background-color: #00aeff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover,
+.success-message button:hover {
+    background-color: #007bbf;
+}
+
+.success-message {
+    text-align: center;
+}
