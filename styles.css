@@ -73,11 +73,11 @@ header h1 {
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
     text-align: center; /* Ensures text alignment inside the flex container */
-    height: 10vh; /* Makes the landing page take up the full height of the viewport */
+    height: 25vh; /* Makes the landing page take up the full height of the viewport */
     background-color: #f4f9ffd5; /* Optional: Add a light background color for style */
     color: #000000; /* Optional: Set text color */
-    margin-bottom: 20px; /* Adjust this value to reduce spacing */
-    margin-top: 40px; /* Adjust this value to increase spacing */
+    margin-bottom: 0px; /* Adjust this value to reduce spacing */
+    margin-top: 0px; /* Adjust this value to increase spacing */
 }
 
 .landing-page h1 {
@@ -90,7 +90,7 @@ header h1 {
     flex-direction: column; /* Stacks text and image vertically */
     justify-content: center; /* Centers vertically */
     align-items: center; /* Centers horizontally */
-    height: 75vh; /* Makes the section take the full height of the viewport */
+    height: auto; /* Makes the section take the full height of the viewport */
     text-align: center; /* Centers the text inside the container */
     background-color: #f4faff; /* Optional: Add a background color */
     color: #000; /* Optional: Text color */
@@ -120,8 +120,9 @@ header h1 {
 
 .product-showcase p {
     margin-top: 10px; /* Adjust this value to control spacing */
+    margin-bottom: 40px; /* Adjust this value to control spacing */
     font-size: 1.2rem;
-    color: #333;
+    color: #000000;
 }
 
 .product-details img {
@@ -251,7 +252,6 @@ footer {
 .cart-item {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
 }
@@ -276,10 +276,12 @@ footer {
 
 .cart-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     max-width: 1200px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .cart-items {
@@ -364,10 +366,11 @@ footer {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    height: auto;
 }
 
 .form-container {
-    width: 100%;
+    width: auto;
     max-width: 600px;
     background-color: #f9f9f9;
     padding: 20px;
@@ -384,7 +387,7 @@ footer {
 .name-fields {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: auto;
     margin-bottom: 10px;
 }
 
@@ -513,6 +516,9 @@ footer {
         font-size: 14px;
         padding: 8px 16px;
     }
+    .cart-container {
+        flex-direction: column; /* Ensure flex direction remains row for even smaller screens */
+    }
 }
 
 @media (max-width: 480px) {
@@ -571,5 +577,8 @@ footer {
     button {
         font-size: 12px;
         padding: 6px 12px;
+    }
+    .cart-container {
+        flex-direction: column; /* Ensure flex direction remains row for even smaller screens */
     }
 }
