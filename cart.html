@@ -29,13 +29,31 @@
             <div id="cart-summary" class="cart-summary">
                 <h2>Summary</h2>
                 <p id="total-price">Total: $0.00 CAD</p>
-                <button class="checkout-button">Checkout</button>
+                <button class="wishlist-button">Add to Wishlist</button>
             </div>
         </div>
         <div id="empty-cart" class="empty-cart" style="display: none;">
             <img src="images/empty-cart.png" alt="Empty Cart" class="empty-cart-image">
             <p>Your cart is currently empty.</p>
             <button class="continue-shopping-button" onclick="continueShopping()">Continue Shopping</button>
+        </div>
+        <div id="wishlist-form" class="wishlist-form" style="display: none;">
+            <h2>Wishlist Information</h2>
+            <form id="wishlist-form">
+                <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </main>
     <footer>
@@ -112,6 +130,22 @@
         }
 
         document.addEventListener('DOMContentLoaded', loadCart);
+
+        document.querySelector('.wishlist-button').addEventListener('click', function() {
+            document.getElementById('wishlist-form').style.display = 'block';
+        });
+
+        document.getElementById('wishlist-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Handle form submission, e.g., send data to server
+            alert('Wishlist information submitted!');
+        });
+
+        function continueShopping() {
+            window.location.href = 'product.html';
+        }
+
+        window.onload = loadCart;
     </script>
 </body>
 </html>
