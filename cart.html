@@ -143,7 +143,7 @@
 
             console.log('Submitting form with data:', { fullName, email, phone, cart }); // Debugging log
 
-            fetch('https://i4u2965j93.execute-api.us-east-2.amazonaws.com/prodL', {
+            fetch('https://i4u2965j93.execute-api.us-east-2.amazonaws.com/prod', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -156,6 +156,7 @@
                 })
             }).then(response => response.json())
               .then(data => {
+                  console.log('Response from server:', data); // Debugging log
                   alert(data.message);
                   document.getElementById('wishlist-form').reset();
                   document.getElementById('wishlist-form').style.display = 'none';
