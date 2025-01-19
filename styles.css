@@ -424,3 +424,39 @@ footer {
 .success-message {
     text-align: center;
 }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.wishlist-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.wishlist-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.wishlist-form button:hover {
+    background-color: #0056b3;
+}
