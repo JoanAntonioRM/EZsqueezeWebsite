@@ -116,6 +116,20 @@
             }
         }
 
+        function updateQuantity(index, quantity) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart[index].quantity = parseInt(quantity);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function removeFromCart(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
         document.querySelector('.wishlist-button').addEventListener('click', function() {
             document.getElementById('wishlist-form').style.display = 'block';
         });
@@ -126,6 +140,8 @@
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            console.log('Submitting form with data:', { fullName, email, phone, cart }); // Debugging log
 
             fetch('https://i4u2965j93.execute-api.us-east-2.amazonaws.com/prodL', {
                 method: 'POST',
