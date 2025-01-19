@@ -35,10 +35,11 @@ header {
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
     flex-direction: column; /* Ensures content stacks vertically */
-    min-height: calc(100vh - 120px); /* Adjust height to account for header and footer */
     padding: 20px; /* Optional: Add padding */
     text-align: center; /* Ensures text alignment inside the container */
 }
+
+
 
 /* Logo styles */
 header img {
@@ -59,7 +60,7 @@ header h1 {
     flex: 1; /* Allows the title to occupy space between logo and nav */
     text-align: left; /* Centers the title */
     margin: 10px; /* Remove default margin */
-    font-size: 1.8rem; /* Adjust font size */
+    font-size: 1.5rem; /* Adjust font size */
     color: #237bff; /* Text color */
     font-weight: bold;
     cursor: pointer; /* Indicates it's clickable */
@@ -459,4 +460,116 @@ footer {
 
 .wishlist-form button:hover {
     background-color: #0056b3;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    header nav a {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+
+    footer .social-media a img {
+        height: 18px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .landing-page h1 {
+        font-size: 28px;
+    }
+
+    .landing-page p {
+        font-size: 16px;
+    }
+
+    .container {
+        font-size: 16px;
+    }
+
+    .product-showcase h2 {
+        font-size: 20px;
+    }
+
+    .product-showcase p {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    header img {
+        height: 40px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    header nav a {
+        font-size: 14px;
+    }
+
+    header nav a img {
+        height: 25px;
+    }
+
+    footer p {
+        font-size: 10px;
+    }
+
+    .container {
+        font-size: 12px;
+    }
+
+    footer .social-media a img {
+        height: 16px;
+    }
+
+    main {
+        padding: 5px;
+    }
+
+    .landing-page h1 {
+        font-size: 24px;
+    }
+
+    .landing-page p {
+        font-size: 14px;
+    }
+
+    .product-showcase h2 {
+        font-size: 18px;
+    }
+
+    .product-showcase p {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
 }
