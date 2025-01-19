@@ -24,13 +24,15 @@
     <main class="contact-page">
         <h1>Contact Us</h1>
         <div class="form-container">
-            <form class="contact-form" action="https://formsubmit.co/81e4b20c7203ea6d1c6bd35bc95c7123" method="POST">
+            <form class="contact-form" action="https://formsubmit.co/81e4b20c7203ea6d1c6bd35bc95c7123" method="POST" onsubmit="sendEmail(event)">
+                <input type="text" name="_honey" style="display:none">
+                <input type="hidden" name="_captcha" value="false">
                 <div class="name-fields">
-                    <input type="text" name="first-name" placeholder="First Name" required>
-                    <input type="text" name="last-name" placeholder="Last Name" required>
+                    <input type="text" name="First&nbsp;name" placeholder="First Name" required>
+                    <input type="text" name="Last&nbsp;name" placeholder="Last Name" required>
                 </div>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <input type="email" name="Email" placeholder="Email" required>
+                <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
                 <button type="submit">Send</button>
             </form>
             <div class="success-message" style="display: none;">
