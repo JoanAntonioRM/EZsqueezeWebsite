@@ -23,13 +23,15 @@
     <main class="contact-page">
         <h1>Contact Us</h1>
         <div class="form-container">
-            <form class="contact-form" onsubmit="sendEmail(event)">
+            <form class="contact-form" action="https://formsubmit.co/Ez.Squeeze.JAQC@gmail.com" method="POST">
                 <div class="name-fields">
                     <input type="text" name="first-name" placeholder="First Name" required>
                     <input type="text" name="last-name" placeholder="Last Name" required>
                 </div>
                 <input type="email" name="email" placeholder="Email" required>
                 <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <input type="hidden" name="_next" value="thankyou.html">
+                <input type="hidden" name="_captcha" value="false">
                 <button type="submit">Send</button>
             </form>
             <div class="success-message" style="display: none;">
