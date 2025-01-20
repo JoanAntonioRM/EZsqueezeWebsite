@@ -38,7 +38,7 @@
         </div>
         <div id="wishlist-form" class="wishlist-form" style="display: none;">
             <h2>Wishlist Information</h2>
-            <p class="wishlist-info-text">These information are asked so we can contact you in the future.</p>
+            <p class="wishlist-info-text">These information is asked so we are able to contact you in the future.</p>
             <form id="wishlist-form" action="https://formsubmit.co/81e4b20c7203ea6d1c6bd35bc95c7123" method="POST">
                 <input type="text" name="_honey" style="display:none">
                 <input type="hidden" name="_captcha" value="false">
@@ -96,9 +96,11 @@
                     const itemElement = document.createElement('div');
                     itemElement.classList.add('cart-item');
                     itemElement.innerHTML = `
-                        <img src="images/product-image1.jpg" alt="${item.name}" class="cart-item-image">
+                        <a href="product.html">
+                            <img src="images/product-image1.jpg" alt="Product Image" class="cart-item-image">
+                        </a>
                         <div class="cart-item-details">
-                            <p>${item.name}</p>
+                            <h3>2-PACK Universal Tube Extractor</h3>
                             <p>Price: $${item.price.toFixed(2)} CAD</p>
                             <p>Quantity: <input type="number" class="quantity-input" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)" oninput="adjustWidth(this)"></p>
                             <button class="cart-button" onclick="removeFromCart(${index})">Remove</button>

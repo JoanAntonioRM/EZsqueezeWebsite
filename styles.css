@@ -271,10 +271,11 @@ footer {
 }
 
 .cart-item-image {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     margin-right: 10px;
+    border-radius: 8px;
 }
 
 .cart-item-details {
