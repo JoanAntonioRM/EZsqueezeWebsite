@@ -133,38 +133,6 @@
             document.getElementById('wishlist-form').style.display = 'block';
         });
 
-        document.getElementById('wishlist-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const fullName = document.getElementById('full-name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-            console.log('Submitting form with data:', { fullName, email, phone, cart }); // Debugging log
-
-            fetch('https://i4u2965j93.execute-api.us-east-2.amazonaws.com/prod', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    fullName: fullName,
-                    email: email,
-                    phone: phone,
-                    cart: cart
-                })
-            }).then(response => response.json())
-              .then(data => {
-                  console.log('Response from server:', data); // Debugging log
-                  alert(data.message);
-                  document.getElementById('wishlist-form').reset();
-                  document.getElementById('wishlist-form').style.display = 'none';
-                  document.getElementById('confirmation-screen').style.display = 'block';
-              }).catch(error => {
-                  console.error('Error:', error);
-              });
-        });
-
         function continueShopping() {
             window.location.href = 'index.html';
         }
