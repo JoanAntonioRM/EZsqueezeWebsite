@@ -15,53 +15,53 @@
         </a>
         <h1><a href="index.html">EZ Squeeze</a></h1>
         <nav>
-            <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Contactez-nous</a>
             <a href="cart.html">
                 <img src="images/cart-icon.png" alt="Shopping Cart" class="cart-icon">
             </a>
         </nav>
     </header>
     <main class="cart-page">
-        <h1>Your Shopping Cart</h1>
+        <h1>Votre Panier</h1>
         <div class="cart-container">
             <div id="cart-items" class="cart-items"></div>
             <div id="cart-summary" class="cart-summary">
-                <h2>Summary</h2>
+                <h2>Résumé</h2>
                 <p id="total-price">Total: $0.00 CAD</p>
-                <button class="wishlist-button" onclick="showWishlistForm()">Add to Wishlist</button>
+                <button class="wishlist-button" onclick="showWishlistForm()">Ajouter à la liste de souhaits</button>
             </div>
         </div>
         <div id="empty-cart" class="empty-cart" style="display: none;">
             <img src="images/empty-cart.png" alt="Empty Cart" class="empty-cart-image">
-            <p>Your cart is currently empty.</p>
-            <button class="continue-shopping-button" onclick="continueShopping()">Continue Shopping</button>
+            <p>Votre panier est actuellement vide.!</p>
+            <button class="continue-shopping-button" onclick="continueShopping()">Continuer à magasiner</button>
         </div>
         <div id="wishlist-form" class="wishlist-form" style="display: none;">
-            <h2>Wishlist Information</h2>
-            <p class="wishlist-info-text">These information is asked so we are able to contact you in the future.</p>
+            <h2>Information sur la liste de souhaits</h2>
+            <p class="wishlist-info-text">Ces informations vous sont demandées afin que nous puissions vous contacter dans un future.</p>
             <form id="wishlist-form" action="https://formsubmit.co/81e4b20c7203ea6d1c6bd35bc95c7123" method="POST">
                 <input type="text" name="_honey" style="display:none">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://ezsqueeze-website.vercel.app/wishlistinfoconfirm.html">
                 <input type="hidden" id="product-quantity" name="Product Quantity">
                 <div class="form-group">
-                    <label for="full-name">Full Name:</label>
+                    <label for="full-name">Nom et Prénom:</label>
                     <input type="text" id="full-name" name="Full&nbsp;name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
+                    <label for="email">E-mail:</label>
                     <input type="email" id="email" name="Email" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone Number:</label>
+                    <label for="phone">Numéro de téléphone (Optional):</label>
                     <input type="tel" id="phone" name="Phone&nbsp;Number" optional>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit">Soumettre</button>
             </form>
         </div>
     </main>
     <footer>
-        <p>&copy; 2025 EZ Squeeze. All rights reserved.</p>
+        <p>&copy; 2025 EZ Squeeze. Tous droits réservés.</p>
         <div class="social-media">
             <a href="https://www.instagram.com/ezsqueezeqc/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61572241461773" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -100,10 +100,10 @@
                             <img src="images/product-image1.jpg" alt="Product Image" class="cart-item-image">
                         </a>
                         <div class="cart-item-details">
-                            <h3>2-PACK Universal Tube Extractor</h3>
+                            <h3>2-PACK Extracteur de Tube Universel</h3>
                             <p>Price: $${item.price.toFixed(2)} CAD</p>
-                            <p>Quantity: <input type="number" class="quantity-input" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)" oninput="adjustWidth(this)"></p>
-                            <button class="cart-button" onclick="removeFromCart(${index})">Remove</button>
+                            <p>Quantité: <input type="number" class="quantity-input" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)" oninput="adjustWidth(this)"></p>
+                            <button class="cart-button" onclick="removeFromCart(${index})">Retirer</button>
                         </div>
                     `;
                     cartItemsContainer.appendChild(itemElement);
