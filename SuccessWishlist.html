@@ -36,6 +36,26 @@
         <button class="back-to-main-button" onclick="goToMainPage()">Back to Main Page</button>
     </div>
 
+    <form id="wishlist-form" action="https://formsubmit.co/81e4b20c7203ea6d1c6bd35bc95c7123" method="POST">
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://ezsqueeze-website.vercel.app/successwishlist.html">
+        <input type="hidden" id="product-quantity" name="Product Quantity">
+        <div class="form-group">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="Full&nbsp;name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="Email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="Phone&nbsp;Number" optional>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
     <footer>
         <p>&copy; 2025 EZ Squeeze. All rights reserved.</p>
         <div class="social-media">
@@ -50,6 +70,18 @@
         function goToMainPage() {
             window.location.href = 'index.html';
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const productQuantityInput = document.getElementById('product-quantity');
+            let totalQuantity = 0;
+
+            cart.forEach(item => {
+                totalQuantity += item.quantity;
+            });
+
+            productQuantityInput.value = totalQuantity;
+        });
     </script>
 </body>
 </html>
