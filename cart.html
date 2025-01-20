@@ -28,7 +28,7 @@
             <div id="cart-summary" class="cart-summary">
                 <h2>Summary</h2>
                 <p id="total-price">Total: $0.00 CAD</p>
-                <button class="wishlist-button">Add to Wishlist</button>
+                <button class="wishlist-button" onclick="showWishlistForm()">Add to Wishlist</button>
             </div>
         </div>
         <div id="empty-cart" class="empty-cart" style="display: none;">
@@ -43,7 +43,7 @@
                 <input type="text" name="_honey" style="display:none">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="SuccessWishlist.html">
-                <input type="hidden" id="product-quantity" name="Product&nbsp;Quantity">
+                <input type="hidden" id="product-quantity" name="Product Quantity">
                 <div class="form-group">
                     <label for="full-name">Full Name:</label>
                     <input type="text" id="full-name" name="Full&nbsp;name" required>
@@ -137,6 +137,10 @@
 
         function goToMainPage() {
             window.location.href = 'index.html';
+        }
+
+        function showWishlistForm() {
+            document.getElementById('wishlist-form').style.display = 'block';
         }
 
         window.onload = loadCart;
