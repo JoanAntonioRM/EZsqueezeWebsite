@@ -136,6 +136,14 @@
             document.getElementById('wishlist-form').style.display = 'block';
         });
 
+        document.querySelector('#wishlist-form form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+        
+        // Hide the wishlist form and show the confirmation screen
+        document.getElementById('wishlist-form').style.display = 'none';
+        document.getElementById('confirmation-screen').style.display = 'block';
+        });
+
         function continueShopping() {
             window.location.href = 'index.html';
         }
