@@ -43,6 +43,7 @@
                 <input type="text" name="_honey" style="display:none">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://ezsqueeze-website.vercel.app/successwishlist.html">
+                <input type="hidden" id="product-quantity" name="Product&nbsp;Quantity">
                 <div class="form-group">
                     <label for="full-name">Full Name:</label>
                     <input type="text" id="full-name" name="Full&nbsp;name" required>
@@ -75,7 +76,9 @@
             const totalPriceElement = document.getElementById('total-price');
             const emptyCartElement = document.getElementById('empty-cart');
             const cartSummaryElement = document.getElementById('cart-summary');
+            const productQuantityInput = document.getElementById('product-quantity');
             let totalPrice = 0;
+            let totalQuantity = 0;
 
             if (cart.length === 0) {
                 cartItemsContainer.style.display = 'none';
@@ -89,6 +92,7 @@
                 cartItemsContainer.innerHTML = '';
                 cart.forEach((item, index) => {
                     totalPrice += item.price * item.quantity;
+                    totalQuantity += item.quantity;
                     const itemElement = document.createElement('div');
                     itemElement.classList.add('cart-item');
                     itemElement.innerHTML = `
@@ -104,6 +108,9 @@
                 });
                 totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)} CAD`;
             }
+
+            // Set the value of the hidden input field
+            productQuantityInput.value = totalQuantity;
         }
 
         function updateQuantity(index, quantity) {
