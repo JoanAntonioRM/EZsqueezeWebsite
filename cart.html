@@ -41,7 +41,6 @@
             <form id="wishlist-form" action="https://formsubmit.co/81e4b20c7203ea6d1c6bd35bc95c7123" method="POST">
                 <input type="text" name="_honey" style="display:none">
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://ezsqueeze-website.vercel.app/successwishlist.html">
                 <div class="form-group">
                     <label for="full-name">Full Name:</label>
                     <input type="text" id="full-name" name="Full&nbsp;name" required>
@@ -54,7 +53,7 @@
                     <label for="phone">Phone Number:</label>
                     <input type="tel" id="phone" name="Phone&nbsp;Number" optional>
                 </div>
-                <button type="submit" id="wishlist-submit-button">Submit</button>
+                <button type="submit">Submit</button>
             </form>
             <div id="confirmation-screen" class="confirmation-screen" style="display: none;">
                 <h2>Product Successfully Added to Wishlist</h2>
@@ -134,27 +133,6 @@
 
         document.querySelector('.wishlist-button').addEventListener('click', function() {
             document.getElementById('wishlist-form').style.display = 'block';
-        });
-
-        document.getElementById('wishlist-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-            document.getElementById('wishlist-form').style.display = 'none';
-            document.getElementById('confirmation-screen').style.display = 'block';
-            
-            // Optionally, you can submit the form data using fetch or XMLHttpRequest
-            const formData = new FormData(this);
-            fetch(this.action, {
-                method: this.method,
-                body: formData,
-            }).then(response => {
-                if (response.ok) {
-                    console.log('Form successfully submitted');
-                } else {
-                    console.error('Form submission error');
-                }
-            }).catch(error => {
-                console.error('Form submission error', error);
-            });
         });
 
         function continueShopping() {
