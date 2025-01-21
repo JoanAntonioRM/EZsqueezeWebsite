@@ -112,6 +112,7 @@
             // Set the value of the hidden input field
             productQuantityInput.value = totalQuantity;
         }
+        
 
         function updateQuantity(index, quantity) {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -119,6 +120,8 @@
             localStorage.setItem('cart', JSON.stringify(cart));
             loadCart();
         }
+
+        
 
         function removeFromCart(index) {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -139,5 +142,50 @@
 
         loadCart();
     </script>
+    <script>
+        async function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(async (position) => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+    
+                    try {
+                        // Replace 'YOUR_API_KEY' with your actual API key from OpenCage or another geocoding provider
+                        const response = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=d77f68db89b146a0af0d7d155e70bbe2`);
+                        const data = await response.json();
+    
+                        if (data.results && data.results.length > 0) {
+                            const location = data.results[0].components;
+                            const city = location.city || location.town || location.village || 'Unknown City';
+                            const postalCode = location.postcode || 'Unknown Postal Code';
+    
+                            // Set city and postal code into hidden form fields
+                            const form = document.getElementById('wishlist-form');
+                            const cityInput = document.createElement('input');
+                            cityInput.type = 'hidden';
+                            cityInput.name = 'City';
+                            cityInput.value = city;
+                            form.appendChild(cityInput);
+    
+                            const postalCodeInput = document.createElement('input');
+                            postalCodeInput.type = 'hidden';
+                            postalCodeInput.name = 'Postal Code';
+                            postalCodeInput.value = postalCode;
+                            form.appendChild(postalCodeInput);
+                        }
+                    } catch (error) {
+                        console.error('Error fetching location data:', error);
+                    }
+                }, (error) => {
+                    console.error('Error getting location:', error);
+                });
+            } else {
+                console.error('Geolocation is not supported by this browser.');
+            }
+        }
+    
+        document.addEventListener('DOMContentLoaded', getLocation);
+    </script>
+    
 </body>
 </html>
