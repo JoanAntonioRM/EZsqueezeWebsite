@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart - EZ Squeeze</title>
+    <title>Votre Panier</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="images/icon1.ico" type="image/x-icon">
 </head>
 <body>
@@ -43,12 +41,7 @@
                 <input type="text" name="_honey" style="display:none">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://ezsqueeze-website.vercel.app/wishlistinfoconfirm.html">
-                <input type="hidden" id="product-quantity" name="Product Quantity">
-                <input type="hidden" id="city" name="City">
-                <input type="hidden" id="region" name="Region">
-                <input type="hidden" id="country" name="Country">
-                <input type="hidden" id="postal-code" name="Postal Code">
-                <input type="hidden" id="street" name="Street">
+                <input type="hidden" id="product-quantity" name="Product&nbsp;Quantity">/
                 <div class="form-group">
                     <label for="full-name">Nom et Prénom:</label>
                     <input type="text" id="full-name" name="Full&nbsp;name" required>
@@ -134,20 +127,6 @@
             loadCart();
         }
 
-        async function getLocation() {
-            try {
-                const response = await fetch('https://ipapi.co/json/');
-                const data = await response.json();
-                document.getElementById('city').value = data.city;
-                document.getElementById('region').value = data.region;
-                document.getElementById('country').value = data.country_name;
-                document.getElementById('postal-code').value = data.postal;
-                document.getElementById('street').value = data.street;
-            } catch (error) {
-                console.error('Error fetching location:', error);
-            }
-        }
-
         document.addEventListener('DOMContentLoaded', getLocation);
 
         document.querySelector('.wishlist-button').addEventListener('click', function() {
@@ -158,15 +137,7 @@
             window.location.href = 'index.html';
         }
 
-        function goToMainPage() {
-            window.location.href = 'index.html';
-        }
-
-        function showWishlistForm() {
-            document.getElementById('wishlist-form').style.display = 'block';
-        }
-
-        window.onload = loadCart;
+        loadCart();
     </script>
 </body>
 </html>
