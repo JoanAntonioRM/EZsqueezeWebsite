@@ -41,7 +41,7 @@
                 <input type="text" name="_honey" style="display:none">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://ezsqueeze-website.vercel.app/wishlistinfoconfirm.html">
-                <input type="hidden" id="product-quantity" name="Product&nbsp;Quantity">/
+                <input type="hidden" id="product-quantity" name="Product&nbsp;Quantity">
                 <div class="form-group">
                     <label for="full-name">Nom et Prénom:</label>
                     <input type="text" id="full-name" name="Full&nbsp;name" required>
@@ -112,7 +112,6 @@
             // Set the value of the hidden input field
             productQuantityInput.value = totalQuantity;
         }
-        
 
         function updateQuantity(index, quantity) {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -120,8 +119,6 @@
             localStorage.setItem('cart', JSON.stringify(cart));
             loadCart();
         }
-
-        
 
         function removeFromCart(index) {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
