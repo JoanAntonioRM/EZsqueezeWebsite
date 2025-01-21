@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Votre Panier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - EZ Squeeze</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="images/icon1.ico" type="image/x-icon">
 </head>
 <body>
@@ -41,7 +43,7 @@
                 <input type="text" name="_honey" style="display:none">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://ezsqueeze-website.vercel.app/wishlistinfoconfirm.html">
-                <input type="hidden" id="product-quantity" name="Product&nbsp;Quantity">
+                <input type="hidden" id="product-quantity" name="Product Quantity">
                 <div class="form-group">
                     <label for="full-name">Nom et Prénom:</label>
                     <input type="text" id="full-name" name="Full&nbsp;name" required>
@@ -127,8 +129,6 @@
             loadCart();
         }
 
-        document.addEventListener('DOMContentLoaded', getLocation);
-
         document.querySelector('.wishlist-button').addEventListener('click', function() {
             document.getElementById('wishlist-form').style.display = 'block';
         });
@@ -137,7 +137,15 @@
             window.location.href = 'index.html';
         }
 
-        loadCart();
+        function goToMainPage() {
+            window.location.href = 'index.html';
+        }
+
+        function showWishlistForm() {
+            document.getElementById('wishlist-form').style.display = 'block';
+        }
+
+        window.onload = loadCart;
     </script>
     <script>
         async function getLocation() {
