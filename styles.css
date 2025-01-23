@@ -516,6 +516,22 @@ footer {
     cursor: pointer;
 }
 
+.language-selection {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.language-link {
+    color: grey;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.language-link:hover {
+    text-decoration: underline;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     header {

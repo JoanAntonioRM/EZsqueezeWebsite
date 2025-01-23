@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,32 +10,32 @@
 </head>
 <body>
     <header>
-        <a href="index.html">
+        <a href="indexEN.html">
             <img src="images/logo.png" alt="EZ Squeeze Logo">
         </a>
-        <h1><a href="index.html">EZ Squeeze</a></h1>
+        <h1><a href="indexEN.html">EZ Squeeze</a></h1>
         <nav>
-            <a href="contact.html">Contactez-nous</a>
-            <a href="cart.html">
+            <a href="contactEN.html">Contact Us</a>
+            <a href="cartEN.html">
                 <img src="images/cart-icon.png" alt="Shopping Cart" class="cart-icon">
             </a>
         </nav>
     </header>
     <div class="container">
         <main class="product-page">
-            <h1>2-PACK Extracteur de Tube Universel</h1>
-            <p>Cet outil permet d'extraire jusqu'à la dernière goutte de produit de vos tubes qu'il s'agisse de dentifrice,de crème solaire de cosmétique ou d'autres produits similaires pour garantir zéro gaspillage.</p>
-            <p>Vendu en lot de 2</p>
+            <h1>2-PACK Universal Tube Extractor</h1>
+            <p>This tool allows you to extract every last drop of product from your tubes, whether it is toothpaste, sunscreen, facial cosmetics or other similar products to guarantee zero waste.</p>
+            <p>Sold in packs of 2</p>
             <div class="product-images">
                 <img src="images/product-image1.jpg" alt="Product Image 1">
                 <img src="images/product-imagesecond.jpg" alt="Product Image 2">
             </div>
-            <p>Prix: <span>$8.00 CAD</span></p>
-            <button onclick="addToCart()">Ajouter au paniert</button>
+            <p>Price: <span>$8.00 CAD</span></p>
+            <button onclick="addToCart()">Add to Cart</button>
         </main>
     </div>
     <footer>
-        <p>&copy; 2025 EZ Squeeze. Tous droits réservés.</p>
+        <p>&copy; 2025 EZ Squeeze. All rights reserved.</p>
         <div class="social-media">
             <a href="https://www.instagram.com/ezsqueezeqc/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61572241461773" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -43,8 +43,8 @@
             <a href="https://www.tiktok.com/@ezsqueezeqc" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
         </div>
         <div class="language-selection">
-            <a href="productEN.html" class="language-link">English</a> | 
-            <a href="product.html" class="language-link"><strong>French</strong></a>
+            <a href="productEN.html" class="language-link"><strong>English</strong></a> | 
+            <a href="product.html" class="language-link">French</a>
         </div>
     </footer>
     <script>
@@ -74,7 +74,7 @@
             }
 
             localStorage.setItem('cart', JSON.stringify(cart));
-            window.location.href = 'cart.html'; // Redirect to cart.html
+            window.location.href = 'cartEN.html'; // Redirect to cartEN.html
         }
     </script>
 </body>

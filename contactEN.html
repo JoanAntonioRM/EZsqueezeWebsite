@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +10,13 @@
 </head>
 <body>
     <header>
-        <a href="index.html">
+        <a href="indexEN.html">
             <img src="images/logo.png" alt="EZ Squeeze Logo">
         </a>
-        <h1><a href="index.html">EZ Squeeze</a></h1>
+        <h1><a href="indexEN.html">EZ Squeeze</a></h1>
         <nav>
-            <a href="product.html">Notre Produit</a>
-            <a href="cart.html">
+            <a href="productEN.html">Our Product</a>
+            <a href="cartEN.html">
                 <img src="images/cart-icon.png" alt="Shopping Cart" class="cart-icon">
             </a>
         </nav>
@@ -27,23 +27,18 @@
             <form class="contact-form" action="https://formsubmit.co/81e4b20c7203ea6d1c6bd35bc95c7123" method="POST">
                 <input type="text" name="_honey" style="display:none">
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://ezsqueeze-website.vercel.app/successcontact.html">
+                <input type="hidden" name="_next" value="https://ezsqueeze-website.vercel.app/successcontactEN.html">
                 <div class="name-fields">
                     <input type="text" name="First&nbsp;name" placeholder="First Name" required>
                     <input type="text" name="Last&nbsp;name" placeholder="Last Name" required>
                 </div>
                 <input type="email" name="Email" placeholder="Email" required>
                 <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Envoyer</button>
+                <button type="submit">Send</button>
             </form>
-            <div class="success-message">
-                <p>Message envoyé ! Nous vous répondrons bientôt.</p>
-                <button onclick="goToHomePage()">Revenir à la page d'accueil</button>
-            </div>
-        </div>
     </main>
     <footer>
-        <p>&copy; 2025 EZ Squeeze. Tous droits réservés.</p>
+        <p>&copy; 2025 EZ Squeeze. All rights reserved.</p>
         <div class="social-media">
             <a href="https://www.instagram.com/ezsqueezeqc/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61572241461773" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -51,8 +46,8 @@
             <a href="https://www.tiktok.com/@ezsqueezeqc" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
         </div>
         <div class="language-selection">
-            <a href="successcontactEN.html" class="language-link">English</a> | 
-            <a href="successcontact.html" class="language-link"><strong>French</strong></a>
+            <a href="contactEN.html" class="language-link"><strong>English</strong></a> | 
+            <a href="contact.html" class="language-link">French</a>
         </div>
     </footer>
     <script>
@@ -63,7 +58,7 @@
         }
 
         function goToHomePage() {
-            window.location.href = 'index.html';
+            window.location.href = 'indexEN.html';
         }
     </script>
 </body>
