@@ -76,7 +76,6 @@ header h1 {
     color: #237bff; /* Text color */
     font-weight: bold;
     cursor: pointer; /* Indicates it's clickable */
-    line-height: 60px; /* Aligns text vertically within the header */
 }
 
 /* Center text in the landing page */
@@ -247,8 +246,13 @@ footer {
     color: black; /* Change text color to black */
 }
 
+.reserved-text {
+    margin-right: 150px;
+}
+
 .social-media {
     margin-top: 10px;
+    margin-right: 150px;
 }
 
 .social-icon {
@@ -532,19 +536,90 @@ footer {
     text-decoration: underline;
 }
 
+.mission-statement {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.mission-statement h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.mission-statement p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.team-presentation {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.team-presentation h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.team-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.team-profile {
+    flex: 1;
+    max-width: 30%;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team-profile h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.team-profile p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.footer-left {
+    float: left;
+}
+
+.footer-logo {
+    width: 150px; /* Adjust the size as needed */
+    height: auto;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     header {
         flex-direction: row;
+        text-align: center;
     }
 
     header h1 {
         font-size: 20px;
     }
 
+    header nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
     header nav a {
         margin-left: 0;
         margin-top: 10px;
+        margin: 5px 0;
     }
 
     footer p {
@@ -620,6 +695,32 @@ footer {
     .confirmation-screen .back-to-main-button {
         font-size: 14px;
         padding: 8px 16px;
+    }
+
+    .cart-icon {
+        width: 30px; /* Adjust size as needed */
+        height: auto;
+    }
+
+    .footer-left {
+        float: none;
+        margin: 0 auto 10px;
+        text-align: center;
+    }
+
+    .footer-content {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .reserved-text,
+    .social-media,
+    .language-selection {
+        margin: 10px 0;
+    }
+
+    .social-icon {
+        font-size: 20px; /* Adjust size as needed */
     }
 }
 
