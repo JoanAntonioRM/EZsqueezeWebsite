@@ -599,6 +599,10 @@ footer {
     height: auto;
 }
 
+.values h2, .vision h2 {
+    text-align: center;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     header {
