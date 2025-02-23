@@ -599,7 +599,7 @@ footer {
     height: auto;
 }
 
-.values h2, .vision h2 {
+.values h2, .vision h2, .vision p {
     text-align: center;
 }
 
