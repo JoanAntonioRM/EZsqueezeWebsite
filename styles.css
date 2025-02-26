@@ -30,6 +30,56 @@ header {
     height: 60px; /* Set a fixed height for the header */
 }
 
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('images/hero-background3.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Dark blue overlay */
+}
+.hero-content {
+    position: relative;
+    padding: 20px 40px;
+    z-index: 1;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+.hero p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #007BFF; /* Deep Royal Blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+.cta-button:hover {
+    background-color: #0056b3;
+}
 .container {
     display: flex;
     flex-direction: column;
