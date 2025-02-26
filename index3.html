@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZ Squeeze</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/icon1.ico" type="image/x-icon">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('images/hero-background3.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Dark blue overlay */
+        }
+        .hero-content {
+            position: relative;
+            padding: 20px 40px;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #007BFF; /* Deep Royal Blue */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index3.html">
+            <img src="images/logo.png" alt="EZ Squeeze Logo">
+        </a>
+        <h1><a href="index.html">EZ Squeeze</a></h1>
+        <nav>
+            <a href="contact.html">Contactez-nous</a>
+            <a href="aboutus.html">À Propos de EZ-Squeeze</a>
+            <a href="cart.html">
+                <img src="images/cart-icon.png" alt="Shopping Cart" class="cart-icon">
+            </a>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bienvenue chez EZ Squeeze</h1>
+            <p>Chaque goutte compte, plus de gaspillage !</p>
+            <a href="product.html" class="cta-button">Achetez Maintenant</a>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-left">
+            <img src="images/jaqlogo.png" alt="JA Québec Logo" class="footer-logo">
+        </div>
+        <div class="reserved-text">
+            <p>&copy; 2025 EZ Squeeze. Tous droits réservés.</p>
+        </div>
+        <div class="social-media">
+            <a href="https://www.instagram.com/ezsqueezeqc/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61572241461773" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.youtube.com/@ezsqueezeqc" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@ezsqueezeqc" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <div class="language-selection">
+            <a href="indexEN3.html" class="language-link">Anglais</a> | 
+            <a href="index3.html" class="language-link"><strong>Français</strong></a>
+        </div>
+    </footer>
+</body>
+</html>
